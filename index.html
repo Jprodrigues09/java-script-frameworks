@@ -1,4 +1,4 @@
-﻿<!Doctype html>
+<!Doctype html>
 <html>
 <head>
 	<title>Menu CSS jQuery</title>
@@ -7,31 +7,38 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script>
 	$(document).ready(function(){
+		$('body'). css('background', '#D3D3D3');
+		$('#menu ul li a'). css("background", "#A9A9A9");
+		$('body'). css("font-family", "sans-serif");
 		$('#menu ul li').prepend('<span></span>');
-			$('#menu ul li').each(function(){
-				var texto= $(this).find('a').text();
-				$(this).find('span').text(texto);
-			});
-			$('#menu ul li').hover(function(){
-				$(this).find('span').stop().animate({
-					marginTop:"-40px"
+		$('#menu ul li').each(function(){
+			var texto= $(this).find('a').text();
+			$(this).find('span').text(texto);
+		});
+		$('#menu ul li').hover(function(){
+			$(this).find('span').stop().animate({
+				marginTop:"-40px"
 				},400);
 			},function(){
 				$(this).find('span').stop().animate({
 					marginTop:"0px"
 				},300);
+				
 			});
 	});
 	</script>
 
 	<style>
-		body{background:black;
+		body{
+			background:white;
+			
 			}
-		#menu{width:700px;
+		#menu{width: 700px;
 			margin:auto;
            	}
 		#menu ul{list-style:none;
-			font-size:18px;
+			font-size:1.125em/*18px*/;
+			font-weight:bold;
 			font-family:"Hobo Std";
 			margin:0px;
 			padding:0px;
@@ -43,8 +50,9 @@
 		#menu ul li a, #menu ul li span{width:100px;
 			padding:10px 20px;
 			height:18px;
-			color:#FFFFFF;
-			/*background:url("images/Degrade_img.jpg") repeat-x; */
+			color:blue;
+			background: url("Degrade_img.jpg") repeat-x;
+			position: relative;
             background:red;
 			text-decoration:none;
 			overflow:hidden;
@@ -56,7 +64,7 @@
 			}
 		#menu ul li a{
 			float:left;
-			background:url("images/Degrade_img.jpg") repeat-x left bottom;
+			background:url("Degrade_img.jpg") repeat-x left bottom;
 			color:#000000;
             height:10px;
 			}
